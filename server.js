@@ -74,6 +74,6 @@ MongoClient.connect(url, function(err, db) {
 		});
 	});
 });
-var port =process.env.PORT || 8000 ;
+var port =process.env.PORT;
 app.listen(port);
 console.log('Server running on port'+port);
