@@ -5,7 +5,7 @@ var app = express();
 var ObjectID = require('mongodb').ObjectID;
 var MongoClient = require('mongodb').MongoClient;
 var bodyParser = require('body-parser');
-app.use(express.static(__dirname + "www"))
+app.use(express.static(__dirname + "/www"))
 app.use(bodyParser.json());
 app.use(function (req, res, next) {
 // Website you wish to allow to connect
@@ -74,6 +74,6 @@ MongoClient.connect(url, function(err, db) {
 		});
 	});
 });
-var port =process.env.PORT ;
+var port =process.env.PORT || 8000 ;
 app.listen(port);
 console.log('Server running on port'+port);
